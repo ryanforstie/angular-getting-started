@@ -1,15 +1,30 @@
 <h2>Products</h2>
 
+<!-- Structural directive (always starts with *) -->
 <div *ngFor="let product of products">
+
   <h3>
+    <!-- Property binding -->
     <a [title]="product.name + ' details'">
+      <!-- Interpolation syntax (renders property's value as text) -->
       {{ product.name }}
     </a>
   </h3>
+  
+  <!-- Conditional structural directive -->
   <p *ngIf="product.description">
     Description: {{ product.description }}
   </p>
+
+  <!-- Binding the click event to the share() method -->
   <button (click)="share()">
     Share
   </button>
+  
+  <!-- Display the app-product-alerts component -->
+  <app-product-alerts
+    [product]="product"
+    (notify)="onNotify()">
+  </app-product-alerts>
+
 </div>
