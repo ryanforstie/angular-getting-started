@@ -11,7 +11,7 @@ import { Output, EventEmitter } from '@angular/core';
 export class ProductAlertsComponent implements OnInit {
   // Create property named product, @Input() decorator indicates propery value passes in from component's parent
   @Input() product;
-  @Output() notify = new EventEmitter();
+  @Output() notify = new EventEmitter(); 
   constructor() { }
 
   ngOnInit() {
