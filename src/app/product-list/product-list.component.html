@@ -1,11 +1,11 @@
 <h2>Products</h2>
 
-<!-- Structural directive (always starts with *) -->
-<div *ngFor="let product of products">
+<!-- Structural directive (always starts with *), index for routes -->
+<div *ngFor="let product of products; index as productId">
 
   <h3>
-    <!-- Property binding -->
-    <a [title]="product.name + ' details'">
+    <!-- Property binding for name, and routing -->
+    <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
       <!-- Interpolation syntax (renders property's value as text) -->
       {{ product.name }}
     </a>
